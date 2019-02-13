@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgba(169,169,169,0.50);
+
+  > div {
+    flex: 1;
+  }
+
+  .logos-wrapper {
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+
+    .logo {
+      width: 40px;
+      display: inline-block;
+      margin: 2px 0;
+    }
+
+    i {
+      line-height: 50px;
+      font-size: 18px;
+      vertical-align: top;
+      margin: 0 15px;
+    }
+  }
+  
+  h1 {
+    color: #00A6DC;
+    font-size: 16px;
+    line-height: 50px;
+    margin: 0;
+  }
+}
