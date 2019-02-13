@@ -11,7 +11,7 @@ const InputSide: React.StatelessComponent<IProps> = ({
   onClickGenerate,
   clearGenerated
 }) => {
-  const [urlInput, setUrlInput] = React.useState("https://backenddev.teqplay.nl/api/swagger.json")
+  const [urlInput, setUrlInput] = React.useState('')
   const [jsonInput, setJsonInput] = React.useState('')
   const [lastChanged, setLastChanged] = React.useState<'URL' | 'JSON'>('URL')
 
@@ -47,10 +47,8 @@ const InputSide: React.StatelessComponent<IProps> = ({
     e.preventDefault();
 
     let jsonData = null
-    console.log(urlInput, lastChanged)
     if(lastChanged === 'URL') {
       jsonData = await getJsonDataFromUrl(urlInput)
-      console.log(jsonData)
     } else {
       jsonData = JSON.parse(jsonInput)
     }
