@@ -19,11 +19,11 @@ const InputSide: React.StatelessComponent<IProps> = ({
     <div className={`input-side ${lastChanged}`}>
       <form className="input-side-form" onSubmit={handleSubmitForm}>
         <div> 
-          <input value={urlInput} placeholder="Paste your Swagger URL here" onChange={handleChangeUrl}/>
+          <input value={urlInput} placeholder="Paste your Swagger URL here" onChange={handleChangeUrl}  onClick={() => setLastChanged('URL')}/>
         </div>
         <div className="or-line"></div>
         <div>
-          <textarea value={jsonInput} placeholder="Or paste your Swagger JSON here" onChange={handleChangeJson}/>
+          <textarea value={jsonInput} placeholder="Or paste your Swagger JSON here" onChange={handleChangeJson} onClick={() => setLastChanged('JSON')}/>
         </div>
         <button type="submit"><i className="fa fa-arrow-right"/></button>
       </form>

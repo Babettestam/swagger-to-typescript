@@ -1,6 +1,7 @@
 import { getData } from "./rest";
 import * as sw2dts from "sw2dts";
 import { toast } from "react-toastify";
+// import CodeMirror from 'CodeMirror'
 
 export async function swaggerJsonToTypescript(data: JSON): Promise<string> {
   try {
