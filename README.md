@@ -1,3 +1,9 @@
+# Swagger to Typescript
+
+> Website is hosted on: 
+
+This is an open source project, if you want to contribute please contact me at babette@stam.codes and share your thoughts.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

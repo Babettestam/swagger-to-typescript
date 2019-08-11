@@ -9,14 +9,14 @@
     "@types/react-codemirror": "1.0.2",
     "@types/react-dom": "16.8.0",
     "@types/react-toastify": "4.0.1",
-    "node-sass": "4.11.0",
+    "node-sass": "4.12.0",
     "react": "16.8.1",
     "react-codemirror": "1.0.0",
     "react-dom": "16.8.1",
     "react-scripts": "2.1.5",
     "react-syntax-highlighter": "10.1.3",
     "react-toastify": "4.5.2",
-    "sw2dts": "2.6.1",
+    "sw2dts": "2.6.2",
     "tslint": "5.12.1",
     "typescript": "3.3.3"
   },
@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gsutil -m cp -r build/* gs://www.swagger-to-typescript.com && gsutil acl -r ch -u AllUsers:R gs://www.swagger-to-typescript.com/*"
   },
   "eslintConfig": {
     "extends": "react-app"
