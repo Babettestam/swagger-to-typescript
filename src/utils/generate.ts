@@ -44,7 +44,7 @@ export async function getJsonDataFromUrl(
 
     return null
   } catch (err) {
-    throw err;
+    throw err
   }
 }
 

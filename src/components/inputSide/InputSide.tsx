@@ -2,6 +2,7 @@ import * as React from 'react'
 import './InputSide.scss'
 import { getJsonDataFromUrl, urlNotFound } from '../../utils/generate';
 import { toast } from 'react-toastify';
+import { IRestError } from '../@types';
 
 interface IProps {
   onClickGenerate: (jsonData: JSON) => void
@@ -54,23 +55,34 @@ const InputSide: React.StatelessComponent<IProps> = ({
     e.preventDefault();
     setLoading(true)
 
-    let jsonData = null
-    if(lastChanged === 'URL' && urlInput) {
-      jsonData = await getJsonDataFromUrl(urlInput)
-    } else if(jsonInput) {
-      jsonData = JSON.parse(jsonInput)
-    } else {
-      toast.warn('Make sure you add an url or add the swagger json content before submitting')
-      setLoading(false)
-      return
-    }
+    try {
+      let jsonData = null
+      if(lastChanged === 'URL' && urlInput) {
+        jsonData = await getJsonDataFromUrl(urlInput)
+      } else if(jsonInput) {
+        jsonData = JSON.parse(jsonInput)
+      } else {
+        toast.warn('Make sure you add an url or add the swagger json content before submitting')
+        setLoading(false)
+        return
+      }
 
-    if(jsonData) {
-      onClickGenerate(jsonData)
-    } else {
-      clearGenerated()
-      urlNotFound()
+      if(jsonData) {
+        onClickGenerate(jsonData)
+      } else {
+        clearGenerated()
+        urlNotFound()
+      }
+    } catch(err) {
+      if(lastChanged === 'URL') {
+        if(err.message === 'Failed to fetch') {
+          toast.error('Could not fetch the data, please copy the json data from the URL in the bottom text box.', { autoClose: 14000 })
+        }
+      }
+
+      toast.error('an error occurred: ', err.message)
     }
+    
     setLoading(false)
   }
 }
