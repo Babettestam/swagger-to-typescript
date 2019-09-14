@@ -31,19 +31,6 @@ class App extends React.Component<{}, IState> {
           <OutputSide tsData={this.state.tsData} />
         </div>
 
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <ins
-          className="adsbygoogle"
-          style={{display:'block'}}
-          data-ad-client="ca-pub-3522829575958462"
-          data-ad-slot="6267249083"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        />
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
     );
   }

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41457762-6"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41457762-6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -12,6 +12,73 @@
 
       gtag("config", "UA-41457762-6");
     </script>
+
+    <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <script async src="%PUBLIC_URL%/prebid2.32.0.js"></script>
+
+    <script>
+        var sizes = [
+            [300, 250]
+        ];
+        var PREBID_TIMEOUT = 1000;
+        var FAILSAFE_TIMEOUT = 3000;
+
+        var adUnits = [{
+            code: '/19968336/header-bid-tag-1',
+            mediaTypes: {
+                banner: {
+                    sizes: sizes
+                }
+            },
+            bids: [{
+                bidder: 'brainy',
+                params: {
+                    placementId: 13144370
+                }
+            }]
+        }];
+
+        // ======== DO NOT EDIT BELOW THIS LINE =========== //
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        googletag.cmd.push(function() {
+            googletag.pubads().disableInitialLoad();
+        });
+
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+
+        pbjs.que.push(function() {
+            pbjs.addAdUnits(adUnits);
+            pbjs.requestBids({
+                bidsBackHandler: initAdserver,
+                timeout: PREBID_TIMEOUT
+            });
+        });
+
+        function initAdserver() {
+            if (pbjs.initAdserverSet) return;
+            pbjs.initAdserverSet = true;
+            googletag.cmd.push(function() {
+                pbjs.setTargetingForGPTAsync && pbjs.setTargetingForGPTAsync();
+                googletag.pubads().refresh();
+            });
+        }
+        
+        // in case PBJS doesn't load
+        setTimeout(function() {
+            initAdserver();
+        }, FAILSAFE_TIMEOUT);
+
+        googletag.cmd.push(function() {
+            googletag.defineSlot('/19968336/header-bid-tag-1', sizes, 'div-1')
+              .addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+
+    </script> -->
+
 
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -44,13 +111,13 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-3522829575958462",
         enable_page_level_ads: true
       });
-    </script>
+    </script> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -60,11 +127,26 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Swagger to typescript</title>
+    <title>Swagger to Typescript</title>
+    <meta name="description" content="Trasfer your swagger documentation to typescript with just one click">
+    <meta name="keywords" content="swagger, typescript, swagger to typescript, online, tool">
+    <link rel="canonical" href="https://www.swagger-to-typescript.com/" />
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Swagger to Typescript" />
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+        
+    <div id='div-1'>
+        <script type='text/javascript'>
+            googletag.cmd.push(function() {
+                googletag.display('div-1');
+            });
+        </script>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
