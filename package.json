@@ -9,7 +9,7 @@
     "@types/react-codemirror": "1.0.2",
     "@types/react-dom": "16.8.0",
     "@types/react-toastify": "4.0.1",
-    "node-sass": "4.12.0",
+    "node-sass": "7.0.0",
     "react": "16.8.1",
     "react-adsense": "0.1.0",
     "react-codemirror": "1.0.0",
